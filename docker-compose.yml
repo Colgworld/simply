@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+  web:
+    image: colgworld/simplychallenge
+    ports:
+     - "3000:3000"
+    deploy:
+      replicas: 3
+      endpoint_mode: dnsrr
+      resources:
+        limits:
+          memory: 50M
+        reservations:
+          memory: 50M
