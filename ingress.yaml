@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: terraform-example-ingress
+spec:
+  backend:
+  - serviceName: terraform-example
+    servicePort: 8080
+  rules:
+  - host: localhost
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: terraform-example
+          servicePort: 8080
